@@ -1,12 +1,14 @@
-import reactLogo from './assets/react.svg';
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";
+import Homepage from "./pages/Homepage/Homepage";
 
 function App() {
   return (
-    <div className="">
-      <div className="nav w-full">
-        <h1 className="text-amber-600">Hi</h1>
-        <div className="w-16 h-8 bg-slate-500"></div>
-      </div>
+    <div className="bg-white w-full relative font-inter flex-col inline-flex">
+      <Navbar />
+      <Routes>
+        <Route index element={<Homepage />} />
+      </Routes>
     </div>
   );
 }
