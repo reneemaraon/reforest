@@ -14,9 +14,9 @@ const CustomButton = ({
       "bg-none border border-[0.5px] border-white/60 hover:text-slate-150 text-white hover:bg-white/10",
     gradient:
       "bg-gradient-to-r from-[#3876BF] via-sky-500 to-brand-pink text-white hover:from-cyan-700 hover:via-sky-600 hover:to-cyan-600",
-    dark: "bg-text-dark text-theme-base hover:bg-gray-700",
+    dark: "bg-text-darker text-theme-base hover:bg-gray-700",
     inverse: "bg-brand-pink bg-opacity-20 text-brand-pink hover:bg-opacity-30",
-    light: "border bg-brand-gray-light text-text-dark hover:bg-opacity-70",
+    light: "border bg-brand-gray-light text-text-darker hover:bg-opacity-70",
     lavender: " bg-brand-lavender text-theme-base hover:bg-opacity-70",
   };
 
