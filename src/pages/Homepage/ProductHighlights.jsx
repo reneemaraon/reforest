@@ -1,5 +1,6 @@
-import CustomButton from "../../common/Button";
-import ProductListItem from "../../common/ProductListItem";
+import CustomButton from '../../common/Button';
+import ProductListItem from '../../common/ProductListItem';
+import { products } from '../../assets/products';
 
 const ProductHighlights = () => {
   return (
@@ -11,10 +12,9 @@ const ProductHighlights = () => {
       </div>
 
       <div className="py-12 divide-x inline-flex">
-        <ProductListItem />
-        <ProductListItem />
-        <ProductListItem />
-        <ProductListItem />
+        {products.slice(0, 4).map((product) => (
+          <ProductListItem product={product} />
+        ))}
         {/* border-l-lighter-brown border-r-lighter-brown border border-t-0 border-b-0 */}
       </div>
       <div className="py-4">
