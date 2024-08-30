@@ -1,3 +1,4 @@
+import CustomButton from "../../common/Button";
 import ProductListItem from "../../common/ProductListItem";
 
 const ProductHighlights = () => {
@@ -9,8 +10,15 @@ const ProductHighlights = () => {
         <p className="text-light-brown">re:forest picks</p>
       </div>
 
-      <div className="py-12 inline-flex">
+      <div className="py-12 divide-x inline-flex">
         <ProductListItem />
+        <ProductListItem />
+        <ProductListItem />
+        <ProductListItem />
+        {/* border-l-lighter-brown border-r-lighter-brown border border-t-0 border-b-0 */}
+      </div>
+      <div className="py-4">
+        <CustomButton styleSet="inverse">VIEW ALL PRODUCTS</CustomButton>
       </div>
     </div>
   );

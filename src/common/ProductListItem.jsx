@@ -1,6 +1,6 @@
 const ProductListItem = () => {
   return (
-    <div className="border-l-lighter-brown border-r-lighter-brown border border-t-0 border-b-0 h-[356px] py-5 inline-flex flex-col justify-between items-center">
+    <div className=" h-[356px] py-5 inline-flex flex-col justify-between items-center">
       <div className="image w-full h-52">
         <img className="object-contain" src="/src/assets/sampletree.png" />
       </div>
