@@ -16,6 +16,7 @@ export default {
         "text-dark": "#070710",
         "light-brown": "#A3939D",
         "lighter-brown": "#E7E3DD",
+        "light-brown-bg": "#F8F7F5",
         "lighter-text": "#B6BCC6",
         "primary-green": "#346C61",
         "primary-green-hv": "#2A564E",
