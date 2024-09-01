@@ -1,9 +1,27 @@
+import { DiscountBadge } from "./IconSvg";
+import Icon from "./Icon";
+
+const Discount = ({ discount }) => (
+  <div className="absolute top-0 right-6">
+    <div className="rotate-[-20deg] relative w-[50px] h-[50px] inline-flex items-center justify-center">
+      <p className="text-white text-xs z-10 font-lora">-{discount * 100}%</p>
+      <Icon
+        sizeRules="absolute top-0 left-0 w-[50px] h-[50px]"
+        fill="text-primary-green"
+      >
+        <DiscountBadge />
+      </Icon>
+    </div>
+  </div>
+);
+
 const ProductListItem = ({ product }) => {
   const { name, price, originalPrice, discount, newProduct, imageSrc } =
     product;
 
   return (
-    <div className=" h-[356px] py-5 w-[300px] inline-flex flex-col justify-between items-center">
+    <div className="relative h-[356px] py-5 w-[300px] inline-flex flex-col justify-between items-center">
+      {discount > 0 && <Discount discount={discount} />}
       <div className="image w-full inline-flex justify-center h-52">
         <img className="object-contain" src={`/src/assets/${imageSrc}`} />
       </div>
