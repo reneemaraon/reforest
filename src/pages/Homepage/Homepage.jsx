@@ -1,6 +1,7 @@
-import CustomButton from "../../common/Button";
-import About from "./About";
-import ProductHighlights from "./ProductHighlights";
+import CustomButton from '../../common/Button';
+import About from './About';
+import Advocacies from './Advocacies';
+import ProductHighlights from './ProductHighlights';
 
 const Homepage = () => {
   return (
