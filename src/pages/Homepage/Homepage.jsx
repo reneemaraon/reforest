@@ -1,6 +1,7 @@
 import CustomButton from '../../common/Button';
 import About from './About';
 import Advocacies from './Advocacies';
+import LowerBanner from './LowerBanner';
 import ProductHighlights from './ProductHighlights';
 import ShopCategories from './ShopCategories';
 
@@ -29,6 +30,7 @@ const Homepage = () => {
       <ProductHighlights />
       <About />
       <ShopCategories />
+      <LowerBanner />
     </div>
   );
 };

@@ -11,10 +11,12 @@ const Advocacies = () => {
           />
         </div>
         <div className="w-[580px] h-[600px] bg-theme-base rounded-xl flex flex-col justify-between items-center p-10">
-          <p className="text-xxs">OUR ADVOCACIES</p>
+          <p className="text-xxs text-lighter-text">OUR ADVOCACIES</p>
           <div className="gap-6 flex flex-col items-center">
-            <p className="font-lora text-[36px]">Restoring Ecosystems</p>
-            <p className="text-xxs text-center">
+            <p className="font-lora text-[36px] leading-[117%]">
+              Restoring Ecosystems
+            </p>
+            <p className="text-xs text-text-dark font-light leading-[180%] text-center">
               Through the Reforesting Rural Landscapes project, we partner with
               farmers to integrate tree planting into their land management
               practices. Planting trees on farmlands helps prevent soil erosion,
