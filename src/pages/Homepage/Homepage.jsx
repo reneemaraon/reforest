@@ -2,6 +2,7 @@ import CustomButton from '../../common/Button';
 import About from './About';
 import Advocacies from './Advocacies';
 import ProductHighlights from './ProductHighlights';
+import ShopCategories from './ShopCategories';
 
 const Homepage = () => {
   return (
@@ -27,6 +28,7 @@ const Homepage = () => {
       </div>
       <ProductHighlights />
       <About />
+      <ShopCategories />
     </div>
   );
 };
