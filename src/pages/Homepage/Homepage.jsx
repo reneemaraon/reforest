@@ -63,7 +63,7 @@ const Homepage = () => {
   return (
     <div className="flex-col inline-flex gap-0 w-full items-center">
       {renderSlider()}
-      <div className="bg-[#000207] relative overflow-clip w-full inline-flex flex-col items-center py-20 h-[720px]">
+      <div className="bg-[#000207] relative overflow-clip w-full inline-flex flex-col items-center pt-20 h-[720px]">
         <div className="absolute w-full top-0 max-w-[1500px] bg-red">
           <img
             className="w-[1120px] object-cover"

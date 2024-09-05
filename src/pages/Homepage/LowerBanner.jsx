@@ -1,9 +1,9 @@
-import CustomButton from '../../common/Button';
+import CustomButton from "../../common/Button";
 
 const LowerBanner = () => {
   return (
     <div className="relative flex flex-col items-center overflow-clip py-20 h-947 w-full">
-      <div className="absolute z-10 top-0 w-full">
+      <div className="absolute z-10 top-0 w-full min-w-[1080px]">
         <img
           src="/src/assets/homepage/bannerlow.jpg"
           className="object-cover"
