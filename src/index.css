@@ -12,4 +12,8 @@
     .tag-small {
         @apply rounded-full px-2 py-1.5 bg-lighter-brown;
     }
+
+    .button-transition {
+        @apply transition-colors ease-in-out duration-300;
+    }
 }

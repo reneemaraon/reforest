@@ -11,7 +11,7 @@ const CustomButton = ({
   const styleSets = {
     primary: 'bg-primary-green text-white hover:bg-primary-green-hv',
     secondary:
-      'bg-none border border-[0.5px] border-white/60 hover:text-slate-150 text-white hover:bg-white/10',
+      'bg-none border border-[0.5px] border-white/60 hover:text-slate-150 text-white hover:bg-white/15',
     gradient:
       'bg-gradient-to-r from-[#3876BF] via-sky-500 to-brand-pink text-white hover:from-cyan-700 hover:via-sky-600 hover:to-cyan-600',
     dark: 'bg-text-darker text-theme-base hover:bg-gray-700',
@@ -46,7 +46,7 @@ const CustomButton = ({
 
   return (
     <button
-      className={`transition-colors ease-in-out duration-300 justify-center items-center inline-flex ${stateStyle} ${selectedEdge} ${selectedSize} ${selectedStyle}`}
+      className={`button-transition justify-center items-center inline-flex ${stateStyle} ${selectedEdge} ${selectedSize} ${selectedStyle}`}
       onClick={onClick}
     >
       {children}
