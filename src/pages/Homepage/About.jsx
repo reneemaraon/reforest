@@ -1,5 +1,5 @@
-import CustomButton from '../../common/Button';
-import Advocacies from './Advocacies';
+import CustomButton from "../common/Button";
+import Advocacies from "./Advocacies";
 
 const AboutItem = ({ children }) => (
   <div className="w-[300px] items-center flex flex-col gap-5">{children}</div>

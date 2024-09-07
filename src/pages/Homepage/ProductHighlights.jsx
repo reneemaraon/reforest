@@ -1,5 +1,5 @@
-import CustomButton from "../../common/Button";
-import ProductListItem from "../../common/ProductListItem";
+import CustomButton from "../common/Button";
+import ProductListItem from "../common/ProductListItem";
 import { products } from "../../assets/products";
 import { useState } from "react";
 

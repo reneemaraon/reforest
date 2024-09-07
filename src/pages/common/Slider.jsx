@@ -4,12 +4,16 @@ import { CloseIcon } from "./IconSvg";
 const Slider = ({ children, showModal, setShowModal }) => {
   return (
     <div
+      onClick={() => setShowModal(false)}
       className={`${
         showModal ? "inline-flex" : "hidden"
       }  overflow-clip bg-black/10 bg-opacity-20 backdrop-blur-[1px] fixed top-0 right-0 left-0 z-[80] w-full md:inset-0 h-full`}
     >
       <div className="relative w-full h-full">
-        <div className="absolute right-0 top-0 h-full w-full max-w-[500px] bg-white shadow">
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="absolute right-0 top-0 h-full w-full max-w-[500px] bg-white shadow"
+        >
           <button
             type="button"
             onClick={() => setShowModal(false)}

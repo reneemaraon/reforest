@@ -4,7 +4,7 @@ import {
   HardwoodTreeLeaf,
   MedicinalPlantLeaf,
   ShadeTreeLeaf,
-} from '../../common/IconSvg';
+} from "../common/IconSvg";
 
 const Category = ({ icon, name }) => (
   <div className="category inline-flex gap-5 items-center w-32">
