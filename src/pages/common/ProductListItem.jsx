@@ -35,7 +35,9 @@ const ProductListItem = ({ product }) => {
       <div className="bottom items-center gap-4 inline-flex flex-col">
         {newProduct && <div className="tag-small font-inter text-xxs">NEW</div>}
         <div className="items-center flex flex-col gap-1">
-          <p className="text-sm text-text-darker">{name}</p>
+          <p className="group-hover/item:underline text-sm text-text-darker">
+            {name}
+          </p>
           <div className="text-base font-lora inline-flex  gap-1">
             <p className="">{`$${price.toFixed(2)}`}</p>
             {discount > 0 && (

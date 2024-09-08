@@ -1,9 +1,20 @@
+import { usePopupContext } from "../../context/PopupContext";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 import CustomButton from "../common/Button";
 import Advocacies from "./Advocacies";
 
-const AboutItem = ({ children }) => (
-  <div className="w-[300px] items-center flex flex-col gap-5">{children}</div>
-);
+const AboutItem = ({ children }) => {
+  const elementRef = useScrollAnimation();
+
+  return (
+    <div
+      ref={elementRef}
+      className="opacity-0 w-[300px] items-center flex flex-col gap-5"
+    >
+      {children}
+    </div>
+  );
+};
 
 const AboutHeader = ({ children }) => (
   <p className="font-lora text-base text-center"> {children}</p>
@@ -16,11 +27,18 @@ const Description = ({ children }) => (
 const AboutImageItem = ({ children }) => <div className="h-8">{children}</div>;
 
 const About = () => {
+  const { openSlider } = usePopupContext();
+  const elementRef = useScrollAnimation();
+  const buttonRef = useScrollAnimation();
+
   return (
     <div className="py-10 gap-8 bg-light-brown-bg inline-flex flex-col w-full items-center">
       <div className="inline-flex flex-col items-center gap-6">
         <p className="text-center font-inter text-xxs">ABOUT US</p>
-        <p className="text-center max-w-[500px] font-lora leading-[117%] text-[50px]">
+        <p
+          ref={elementRef}
+          className="opacity-0 text-center max-w-[500px] font-lora leading-[117%] text-[50px]"
+        >
           Join the Movement to Plant a Greener Future
         </p>
       </div>
@@ -59,7 +77,9 @@ const About = () => {
           </Description>
         </AboutItem>
       </div>
-      <CustomButton>BROWSE SEEDLINGS</CustomButton>
+      <div className="opacity-0" ref={buttonRef}>
+        <CustomButton onClick={openSlider}>BROWSE SEEDLINGS</CustomButton>
+      </div>
       <Advocacies />
     </div>
   );

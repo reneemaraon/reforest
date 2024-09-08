@@ -1,16 +1,23 @@
+import useFadeInAnimation from "../../hooks/useFadeInAnimation";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 import CustomButton from "../common/Button";
 
 const Advocacies = () => {
+  const imageAnimate = useScrollAnimation("animate-fade-in", {
+    options: { threshold: 0.2 },
+  });
+
   return (
-    <div className="py-10 gap-8 bg-light-brown-bg inline-flex flex-col w-full items-center">
-      <div className="max-w-[1280px] inline-flex justify-between gap-5">
-        <div className="w-[580px] h-[600px] overflow-clip rounded-xl">
+    <div className="py-10 px-4 gap-8  bg-light-brown-bg inline-flex flex-col w-full items-center">
+      <div className="max-w-[1280px] min-w-[900px] inline-flex justify-between gap-5">
+        <div className="w-full h-[600px] overflow-clip rounded-xl">
           <img
             src="src/assets/homepage/boyjump.png"
-            className="object-cover w-[800px] h-[600px]"
+            ref={imageAnimate}
+            className="opacity-0 object-cover w-[800px] h-[600px]"
           />
         </div>
-        <div className="w-[580px] h-[600px] bg-theme-base rounded-xl flex flex-col justify-between items-center p-10">
+        <div className="w-full h-[600px] bg-theme-base rounded-xl flex flex-col justify-between items-center p-10">
           <p className="text-xxs text-lighter-text">OUR ADVOCACIES</p>
           <div className="gap-6 flex flex-col items-center">
             <p className="font-lora text-[36px] leading-[117%]">

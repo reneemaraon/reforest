@@ -28,7 +28,10 @@ const Navbar = () => {
       id="navbar"
       className="transition-all ease-in-out duration-200 text-white bg-transparent text-xs fixed z-20 top-0 w-full inline-flex px-12 items-center justify-between h-32"
     >
-      <div className="button-transition p-3 rounded-md hover:bg-theme-base/15 cursor-pointer">
+      <div
+        onClick={openSlider}
+        className="button-transition p-3 rounded-md hover:bg-theme-base/15 cursor-pointer"
+      >
         <p>SEEDLINGS</p>
       </div>
 

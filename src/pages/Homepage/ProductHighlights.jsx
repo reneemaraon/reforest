@@ -2,13 +2,17 @@ import CustomButton from "../common/Button";
 import ProductListItem from "../common/ProductListItem";
 import { products } from "../../assets/products";
 import { useState } from "react";
+import { usePopupContext } from "../../context/PopupContext";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const newSeedlings = [products[0], products[4], products[22], products[20]];
 const bestSellers = [products[5], products[7], products[15], products[18]];
 const reforestPicks = [products[2], products[6], products[10], products[12]];
 
 const ProductHighlights = () => {
+  const { openSlider } = usePopupContext();
   const [activeTab, setActiveTab] = useState("newSeedlings");
+  const productsRef = useScrollAnimation();
 
   const getProductList = () => {
     switch (activeTab) {
@@ -37,7 +41,10 @@ const ProductHighlights = () => {
   };
 
   return (
-    <div className="py-12 bg-light-white inline-flex flex-col w-full items-center">
+    <div
+      ref={productsRef}
+      className="opacity-0 py-12 bg-light-white inline-flex flex-col w-full items-center"
+    >
       <div className="flex gap-10 text-base font-lora cursor-pointer">
         {renderTab("New Seedlings", "newSeedlings")}
         {renderTab("Best Sellers", "bestSellers")}
@@ -51,7 +58,9 @@ const ProductHighlights = () => {
       </div>
 
       <div className="py-4">
-        <CustomButton styleSet="inverse">VIEW ALL PRODUCTS</CustomButton>
+        <CustomButton onClick={openSlider} styleSet="inverse">
+          VIEW ALL PRODUCTS
+        </CustomButton>
       </div>
     </div>
   );
