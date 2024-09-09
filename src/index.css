@@ -7,7 +7,7 @@
     @keyframes pushUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
       }
       to {
         opacity: 1;
@@ -23,13 +23,31 @@
           opacity: 1;
         }
     }
-  
+    @keyframes loadBar {
+      from {
+        width: 5%;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    
+    
     .animate-push-up {
       animation: pushUp 0.5s ease-out forwards;
     }
-
+    
     .animate-fade-in {
-        animation: fadeIn 2s ease-in-out forwards;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    
+    .animate-fade-in-short {
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    
+    .animate-progress {
+      animation: loadBar 8s linear forwards;
     }
 
     .opacity-0 {

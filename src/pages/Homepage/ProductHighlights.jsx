@@ -13,6 +13,8 @@ const ProductHighlights = () => {
   const { openSlider } = usePopupContext();
   const [activeTab, setActiveTab] = useState("newSeedlings");
   const productsRef = useScrollAnimation();
+  const buttonsRef = useScrollAnimation(undefined, { threshold: 0.9 });
+  const tabsRef = useScrollAnimation(undefined, { threshold: 0.6 });
 
   const getProductList = () => {
     switch (activeTab) {
@@ -41,26 +43,28 @@ const ProductHighlights = () => {
   };
 
   return (
-    <div
-      ref={productsRef}
-      className="opacity-0 py-12 bg-light-white inline-flex flex-col w-full items-center"
-    >
-      <div className="flex gap-10 text-base font-lora cursor-pointer">
+    <div className="py-12 bg-light-white inline-flex flex-col w-full items-center">
+      <div
+        ref={tabsRef}
+        className="flex gap-10 text-base font-lora cursor-pointer"
+      >
         {renderTab("New Seedlings", "newSeedlings")}
         {renderTab("Best Sellers", "bestSellers")}
         {renderTab("re:forest picks", "reforestPicks")}
       </div>
 
-      <div className="py-12 divide-x inline-flex">
+      <div ref={productsRef} className="opacity-0 py-12 divide-x inline-flex">
         {getProductList().map((product) => (
           <ProductListItem key={product.id} product={product} />
         ))}
       </div>
 
       <div className="py-4">
-        <CustomButton onClick={openSlider} styleSet="inverse">
-          VIEW ALL PRODUCTS
-        </CustomButton>
+        <div className="opacity-0" ref={buttonsRef}>
+          <CustomButton onClick={openSlider} styleSet="inverse">
+            VIEW ALL PRODUCTS
+          </CustomButton>
+        </div>
       </div>
     </div>
   );

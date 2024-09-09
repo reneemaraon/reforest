@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 const useScrollAnimation = (
   animationClass = "animate-push-up",
   options = {
-    threshold: 0.7,
+    threshold: 0.5,
   }
 ) => {
   const elementRef = useRef(null);
