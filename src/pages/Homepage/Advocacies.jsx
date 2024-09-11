@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import CustomButton from "../common/Button";
 import { usePopupContext } from "../../context/PopupContext";
+import ecosystemImg from "src/assets/homepage/boyjump.png";
 
 const ITEMS = [
   {
-    img: "src/assets/homepage/boyjump.png",
+    img: ecosystemImg,
     title: "Restoring Ecosystems",
     description:
       "Through the Reforesting Rural Landscapes project, we partner with \

@@ -1,3 +1,7 @@
+import fbUrl from "/src/assets/homepage/fb.png";
+import igUrl from "/src/assets/homepage/ig.png";
+import twtUrl from "/src/assets/homepage/tw.png";
+
 const Footer = () => {
   return (
     <div className="w-full bg-black text-sm font-light text-white">
@@ -16,19 +20,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="inline-flex gap-8">
+          <img className="h-5 w-5 cursor-pointer" src={fbUrl} alt="facebook" />
+          <img className="h-5 w-5 cursor-pointer" src={igUrl} alt="Instagram" />
           <img
             className="h-5 w-5 cursor-pointer"
-            src="/src/assets/homepage/fb.png"
-            alt="facebook"
-          />
-          <img
-            className="h-5 w-5 cursor-pointer"
-            src="/src/assets/homepage/ig.png"
-            alt="Instagram"
-          />
-          <img
-            className="h-5 w-5 cursor-pointer"
-            src="/src/assets/homepage/tw.png"
+            src={twtUrl}
             alt="Twitter/X"
           />
         </div>

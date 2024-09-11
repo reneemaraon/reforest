@@ -1,6 +1,7 @@
 import { usePopupContext } from "../../context/PopupContext";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 import CustomButton from "../common/Button";
+import bannerImg from "/src/assets/homepage/bannerlow.jpg";
 
 const LowerBanner = () => {
   const { openSlider } = usePopupContext();
@@ -19,10 +20,7 @@ const LowerBanner = () => {
   return (
     <div className="relative flex flex-col items-center overflow-clip py-20 px-10 h-947 w-full">
       <div className="absolute z-10 top-0 w-full h-full min-w-[1080px]">
-        <img
-          src="/src/assets/homepage/bannerlow.jpg"
-          className="object-cover w-full h-full"
-        />
+        <img src={bannerImg} className="object-cover w-full h-full" />
       </div>
       <div className="w-full min-w-[800px] max-w-[1180px] inline-flex z-10">
         <div className="bg-primary-green text-white  rounded-l-[20px] flex flex-col justify-between pr-24 pl-12 py-12 w-[628px] h-[787px]">

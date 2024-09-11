@@ -6,6 +6,7 @@ import ShopCategories from "./ShopCategories";
 import { usePopupContext } from "../../context/PopupContext";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 import useFadeInAnimation from "../../hooks/useFadeInAnimation";
+import bannerImg from "/src/assets/homepage/treeBanner.png";
 
 const Homepage = () => {
   const { setShowSlider } = usePopupContext();
@@ -20,7 +21,7 @@ const Homepage = () => {
         <div className="absolute w-full top-0 max-w-[1500px] bg-red">
           <img
             className={`${imageAnimation} w-[1220px] object-cover min-w-[1120px]`}
-            src="/src/assets/homepage/treeBanner.png"
+            src={bannerImg}
           />
         </div>
         <div className="w-full max-w-[1200px] py-40 px-20 h-720 relative inline-flex justify-end">

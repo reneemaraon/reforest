@@ -3,6 +3,10 @@ import useScrollAnimation from "../../hooks/useScrollAnimation";
 import CustomButton from "../common/Button";
 import Advocacies from "./Advocacies";
 
+import treeImg from "/src/assets/homepage/tree.png";
+import handImg from "/src/assets/homepage/hand.png";
+import earthImg from "/src/assets/homepage/earth.png";
+
 const AboutItem = ({ children }) => {
   const elementRef = useScrollAnimation();
 
@@ -45,7 +49,7 @@ const About = () => {
       <div className="inline-flex gap-12">
         <AboutItem>
           <AboutImageItem>
-            <img className="object-fit" src="/src/assets/homepage/tree.png" />
+            <img className="object-fit" src={treeImg} />
           </AboutImageItem>
           <AboutHeader>Empowering Communities</AboutHeader>
           <Description>
@@ -56,7 +60,7 @@ const About = () => {
         </AboutItem>
         <AboutItem>
           <AboutImageItem>
-            <img className="object-fit" src="/src/assets/homepage/hand.png" />
+            <img className="object-fit" src={handImg} />
           </AboutImageItem>
           <AboutHeader>Supporting Local Economies</AboutHeader>
           <Description>
@@ -67,7 +71,7 @@ const About = () => {
         </AboutItem>
         <AboutItem>
           <AboutImageItem>
-            <img className="object-fit" src="/src/assets/homepage/earth.png" />
+            <img className="object-fit" src={earthImg} />
           </AboutImageItem>
           <AboutHeader>Fostering Environmental Stewardship</AboutHeader>
           <Description>
