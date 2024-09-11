@@ -1,15 +1,6 @@
 import { DiscountBadge } from "./IconSvg";
 import Icon from "./Icon";
 
-const importImage = (imageSrc) => {
-  try {
-    return require(`/src/assets/${imageSrc}`).default;
-  } catch (err) {
-    console.error(`Image not found: ${imageSrc}`);
-    return "";
-  }
-};
-
 const Discount = ({ discount }) => (
   <div className="relative w-full h-full">
     <div className="absolute top-4 right-6">
@@ -38,7 +29,7 @@ const ProductListItem = ({ product }) => {
       <div className="image w-full inline-flex justify-center h-52">
         <img
           className="group-hover/item:scale-105 transition-transform duration-300 ease-in-out object-contain"
-          src={importImage(imageSrc)}
+          src={new URL(`/src/assets/${imageSrc}`, import.meta.url).href}
         />
       </div>
       <div className="bottom items-center gap-4 inline-flex flex-col">
