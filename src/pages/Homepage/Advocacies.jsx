@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CustomButton from "../common/Button";
 import { usePopupContext } from "../../context/PopupContext";
-import ecosystemImg from "src/assets/homepage/boyjump.png";
+import ecosystemImg from "/src/assets/homepage/boyjump.png";
 
 const ITEMS = [
   {
