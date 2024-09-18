@@ -1,20 +1,20 @@
-import { usePopupContext } from "../../context/PopupContext";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
-import CustomButton from "../common/Button";
-import bannerImg from "/src/assets/homepage/bannerlow.jpg";
+import { usePopupContext } from '../../context/PopupContext';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
+import CustomButton from '../common/Button';
+import bannerImg from '/src/assets/homepage/bannerlow.jpg';
 
 const LowerBanner = () => {
   const { openSlider } = usePopupContext();
-  const animateFirst = useScrollAnimation("animate-push-right");
+  const animateFirst = useScrollAnimation('animate-push-right');
   const animateSecond = useScrollAnimation(
-    "animate-push-right",
+    'animate-push-right',
     undefined,
-    "300ms"
+    '300ms'
   );
   const animateThird = useScrollAnimation(
-    "animate-push-right",
+    'animate-push-right',
     undefined,
-    "800ms"
+    '400ms'
   );
 
   return (
