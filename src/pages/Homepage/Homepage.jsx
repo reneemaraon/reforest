@@ -1,21 +1,21 @@
-import CustomButton from '../common/Button';
-import About from './About';
-import LowerBanner from './LowerBanner';
-import ProductHighlights from './ProductHighlights';
-import ShopCategories from './ShopCategories';
-import { usePopupContext } from '../../context/PopupContext';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
-import useFadeInAnimation from '../../hooks/useFadeInAnimation';
-import bannerImg from '/src/assets/homepage/treeBanner.png';
-import { useState } from 'react';
-import FullPageLoading from '../common/FullPageLoading';
+import CustomButton from "../common/Button";
+import About from "./About";
+import LowerBanner from "./LowerBanner";
+import ProductHighlights from "./ProductHighlights";
+import ShopCategories from "./ShopCategories";
+import { usePopupContext } from "../../context/PopupContext";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
+import useFadeInAnimation from "../../hooks/useFadeInAnimation";
+import bannerImg from "/src/assets/homepage/treeBanner.png";
+import { useState } from "react";
+import FullPageLoading from "../common/FullPageLoading";
 
 const Homepage = () => {
   const { setShowSlider } = usePopupContext();
   const headlineRef = useScrollAnimation();
-  const imageAnimation = useFadeInAnimation();
+  const homePageFade = useFadeInAnimation();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const imageZoomout = useScrollAnimation('animate-zoom-out');
+  const imageZoomout = useScrollAnimation("animate-zoom-out");
 
   const openSlider = () => setShowSlider(true);
 
@@ -28,7 +28,7 @@ const Homepage = () => {
       {!isImageLoaded && <FullPageLoading />}
       <div
         className={`${
-          isImageLoaded ? 'inline-flex' : 'hidden'
+          !isImageLoaded ? "hidden" : homePageFade
         } flex-col gap-0 w-full items-center`}
       >
         <div className="bg-[#000207] relative overflow-clip w-full inline-flex flex-col items-center pt-20 h-[720px]">

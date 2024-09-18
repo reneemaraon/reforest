@@ -7,9 +7,7 @@ import treeImg from "/src/assets/homepage/tree.png";
 import handImg from "/src/assets/homepage/hand.png";
 import earthImg from "/src/assets/homepage/earth.png";
 
-const AboutItem = ({ children }) => {
-  const elementRef = useScrollAnimation();
-
+const AboutItem = ({ elementRef, children }) => {
   return (
     <div
       ref={elementRef}
@@ -32,22 +30,31 @@ const AboutImageItem = ({ children }) => <div className="h-8">{children}</div>;
 
 const About = () => {
   const { openSlider } = usePopupContext();
-  const elementRef = useScrollAnimation();
-  const buttonRef = useScrollAnimation();
+  const aboutTextRef = useScrollAnimation();
+  const headerRef = useScrollAnimation(undefined, undefined, "200ms");
+  const aboutItemRefFirst = useScrollAnimation(undefined, undefined, "400ms");
+  const aboutItemRefSecond = useScrollAnimation(undefined, undefined, "500ms");
+  const aboutItemRefThird = useScrollAnimation(undefined, undefined, "600ms");
+  const buttonRef = useScrollAnimation(undefined, undefined, "700ms");
 
   return (
     <div className="py-10 gap-8 bg-light-brown-bg inline-flex flex-col w-full items-center">
       <div className="inline-flex flex-col items-center gap-6">
-        <p className="text-center font-inter text-xxs">ABOUT US</p>
         <p
-          ref={elementRef}
+          ref={aboutTextRef}
+          className="opacity-0 text-center font-inter text-xxs"
+        >
+          ABOUT US
+        </p>
+        <p
+          ref={headerRef}
           className="opacity-0 text-center max-w-[500px] font-lora leading-[117%] text-[50px]"
         >
           Join the Movement to Plant a Greener Future
         </p>
       </div>
       <div className="inline-flex gap-12">
-        <AboutItem>
+        <AboutItem elementRef={aboutItemRefFirst}>
           <AboutImageItem>
             <img className="object-fit" src={treeImg} />
           </AboutImageItem>
@@ -58,7 +65,7 @@ const About = () => {
             greener, healthier environments for everyone.
           </Description>
         </AboutItem>
-        <AboutItem>
+        <AboutItem elementRef={aboutItemRefSecond}>
           <AboutImageItem>
             <img className="object-fit" src={handImg} />
           </AboutImageItem>
@@ -69,7 +76,7 @@ const About = () => {
             fostering economic growth and stability.
           </Description>
         </AboutItem>
-        <AboutItem>
+        <AboutItem elementRef={aboutItemRefThird}>
           <AboutImageItem>
             <img className="object-fit" src={earthImg} />
           </AboutImageItem>
