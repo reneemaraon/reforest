@@ -34,6 +34,18 @@
           opacity: 1;
         }
     }
+
+    @keyframes zoomOut {
+      from {
+        scale: 1.02;
+        opacity: 0;
+      }
+      to {
+        scale: 1;
+        opacity: 1;
+      }
+  }
+
     @keyframes loadBar {
       from {
         width: 5%;
@@ -53,7 +65,11 @@
     }
     
     .animate-fade-in {
-      animation: fadeIn 2s ease-in-out forwards;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    .animate-zoom-out {
+      animation: zoomOut 0.3s ease-out forwards;
     }
 
     
