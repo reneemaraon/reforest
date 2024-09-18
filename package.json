@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
+    "lottie-react": "^2.4.0",
     "postcss": "^8.4.41",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
