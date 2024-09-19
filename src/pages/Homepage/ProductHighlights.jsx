@@ -1,9 +1,9 @@
-import CustomButton from '../common/Button';
-import ProductListItem from '../common/ProductListItem';
-import { products } from '../../assets/products';
-import { useState } from 'react';
-import { usePopupContext } from '../../context/PopupContext';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
+import CustomButton from "../common/Button";
+import ProductListItem from "../common/ProductListItem";
+import { products } from "../../assets/products";
+import { useState } from "react";
+import { usePopupContext } from "../../context/PopupContext";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const newSeedlings = [products[0], products[4], products[22], products[20]];
 const bestSellers = [products[5], products[7], products[15], products[18]];
@@ -11,22 +11,18 @@ const reforestPicks = [products[2], products[6], products[10], products[12]];
 
 const ProductHighlights = () => {
   const { openSlider } = usePopupContext();
-  const [activeTab, setActiveTab] = useState('newSeedlings');
-  const tabsRef = useScrollAnimation(undefined, undefined, '300ms');
-  const productsRef = useScrollAnimation(
-    undefined,
-    { threshold: 0.2 },
-    '700ms'
-  );
-  const buttonsRef = useScrollAnimation(undefined, { threshold: 0.2 }, '800ms');
+  const [activeTab, setActiveTab] = useState("newSeedlings");
+  const tabsRef = useScrollAnimation();
+  const productsRef = useScrollAnimation();
+  const buttonsRef = useScrollAnimation();
 
   const getProductList = () => {
     switch (activeTab) {
-      case 'newSeedlings':
+      case "newSeedlings":
         return newSeedlings;
-      case 'bestSellers':
+      case "bestSellers":
         return bestSellers;
-      case 'reforestPicks':
+      case "reforestPicks":
         return reforestPicks;
       default:
         return [];
@@ -37,7 +33,7 @@ const ProductHighlights = () => {
     return (
       <p
         className={`transition-colors duration-500 ease-in-out hover:text-text-darker ${
-          activeTab === tabVal ? 'text-text-dark' : 'text-light-brown'
+          activeTab === tabVal ? "text-text-dark" : "text-light-brown"
         }`}
         onClick={() => setActiveTab(tabVal)}
       >
@@ -52,9 +48,9 @@ const ProductHighlights = () => {
         ref={tabsRef}
         className="opacity-0 flex gap-10 text-base font-lora cursor-pointer"
       >
-        {renderTab('New Seedlings', 'newSeedlings')}
-        {renderTab('Best Sellers', 'bestSellers')}
-        {renderTab('re:forest picks', 'reforestPicks')}
+        {renderTab("New Seedlings", "newSeedlings")}
+        {renderTab("Best Sellers", "bestSellers")}
+        {renderTab("re:forest picks", "reforestPicks")}
       </div>
 
       <div ref={productsRef} className="opacity-0 py-12 divide-x inline-flex">

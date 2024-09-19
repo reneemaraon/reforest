@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import CustomButton from "../common/Button";
 import { usePopupContext } from "../../context/PopupContext";
-import ecosystemImg from "/src/assets/homepage/boyjump.png";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const ITEMS = [
   {
-    img: ecosystemImg,
+    img: "https://images.pexels.com/photos/722629/pexels-photo-722629.jpeg",
     title: "Restoring Ecosystems",
     description:
       "Through the Reforesting Rural Landscapes project, we partner with \
@@ -32,7 +32,21 @@ const ITEMS = [
 const Advocacies = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { openSlider } = usePopupContext();
-
+  const titleRef = [
+    useScrollAnimation(),
+    useScrollAnimation(),
+    useScrollAnimation(),
+  ];
+  const descriptionRef = [
+    useScrollAnimation(undefined, undefined, "100ms"),
+    useScrollAnimation(undefined, undefined, "100ms"),
+    useScrollAnimation(undefined, undefined, "100ms"),
+  ];
+  const buttonRef = [
+    useScrollAnimation(undefined, undefined, "200ms"),
+    useScrollAnimation(undefined, undefined, "200ms"),
+    useScrollAnimation(undefined, undefined, "200ms"),
+  ];
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -46,15 +60,15 @@ const Advocacies = () => {
   return (
     <div className="py-10 px-4 gap-8  bg-light-brown-bg inline-flex flex-col w-full items-center">
       <div className="max-w-[1280px] min-w-[900px] inline-flex justify-between gap-5">
-        <div className="w-full h-[600px] overflow-clip rounded-xl">
+        <div className="w-full h-[600px] overflow-clip relative rounded-xl">
           {ITEMS.map((item, index) => (
             <img
               src={ITEMS[index].img}
               className={`${
                 index == currentIndex
-                  ? "animate-fade-in-short"
-                  : "opacity-0 hidden"
-              } object-cover w-[800px] h-[600px]`}
+                  ? "opacity-100 scale-[1.02]"
+                  : "opacity-0 scale-1"
+              } object-cover absolute transition-all ease-out duration-[1500ms] w-[800px] h-[600px]`}
             />
           ))}
         </div>
@@ -67,15 +81,23 @@ const Advocacies = () => {
                 index == currentIndex ? "animate-push-up" : "opacity-0 hidden"
               } gap-6 flex flex-col items-center`}
             >
-              <p className="font-lora text-[36px] text-center leading-[117%]">
+              <p
+                ref={titleRef[index]}
+                className="opacity-0 font-lora text-[36px] text-center leading-[117%]"
+              >
                 {ITEMS[index].title}
               </p>
-              <p className="text-xs text-text-dark font-light leading-[180%] text-center">
+              <p
+                ref={descriptionRef[index]}
+                className="opacity-0 text-xs text-text-dark font-light leading-[180%] text-center"
+              >
                 {ITEMS[index].description}
               </p>
-              <CustomButton onClick={openSlider} styleSet="inverse">
-                LEARN MORE
-              </CustomButton>
+              <div className="opacity-0" ref={buttonRef[index]}>
+                <CustomButton onClick={openSlider} styleSet="inverse">
+                  LEARN MORE
+                </CustomButton>
+              </div>
             </div>
           ))}
           <div className="flex gap-2">
