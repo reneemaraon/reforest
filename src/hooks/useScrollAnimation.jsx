@@ -1,16 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 const useScrollAnimation = (
-  animationClass = "animate-push-up",
+  animationClass = 'animate-push-up',
   options = {
     threshold: 0.5,
   },
-  delay = "0ms"
+  delay = '0ms'
 ) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
-    console.log(delay);
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
