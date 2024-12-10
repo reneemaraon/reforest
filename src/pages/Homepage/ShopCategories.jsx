@@ -31,7 +31,7 @@ const ShopCategories = () => {
   const headlineRef = useScrollAnimation("animate-push-right");
   return (
     <div className="w-full flex flex-col py-20 items-center">
-      <div className="max-w-[1120px] w-full flex items-start justify-between">
+      <div className="max-w-[1120px] min-[1130px]:px-0 px-4 w-full flex items-start justify-between">
         <p ref={headlineRef} className="opacity-0 font-lora text-[36px] mt-4">
           Shop by Category
         </p>

@@ -1,40 +1,40 @@
-import { usePopupContext } from '../../context/PopupContext';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
-import CustomButton from '../common/Button';
-import Icon from '../common/Icon';
-import { CartIcon, ProfileIcon } from '../common/IconSvg';
+import { usePopupContext } from "../../context/PopupContext";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
+import CustomButton from "../common/Button";
+import Icon from "../common/Icon";
+import { CartIcon, ProfileIcon } from "../common/IconSvg";
 
 const Navbar = () => {
   const { openSlider } = usePopupContext();
-  const seedlingsRef = useScrollAnimation(undefined, undefined, '400ms');
-  const logoRef = useScrollAnimation(undefined, undefined, '200ms');
-  const profileRef = useScrollAnimation(undefined, undefined, '300ms');
-  const cartRef = useScrollAnimation(undefined, undefined, '600ms');
-  const joinRef = useScrollAnimation(undefined, undefined, '600ms');
+  const seedlingsRef = useScrollAnimation(undefined, undefined, "400ms");
+  const logoRef = useScrollAnimation(undefined, undefined, "200ms");
+  const profileRef = useScrollAnimation(undefined, undefined, "300ms");
+  const cartRef = useScrollAnimation(undefined, undefined, "600ms");
+  const joinRef = useScrollAnimation(undefined, undefined, "600ms");
 
-  document.addEventListener('scroll', function () {
-    const navbar = document.getElementById('navbar');
+  document.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
 
     if (window.scrollY > 100) {
       // Adjust the scroll distance as needed
-      navbar.classList.remove('bg-transparent');
-      navbar.classList.remove('h-32');
-      navbar.classList.add('h-20');
-      navbar.classList.add('bg-text-dark');
+      navbar.classList.remove("bg-transparent");
+      navbar.classList.remove("h-32");
+      navbar.classList.add("h-20");
+      navbar.classList.add("bg-text-dark");
     } else {
-      navbar.classList.remove('bg-text-dark');
-      navbar.classList.remove('h-20');
-      navbar.classList.add('h-32');
-      navbar.classList.add('bg-transparent');
+      navbar.classList.remove("bg-text-dark");
+      navbar.classList.remove("h-20");
+      navbar.classList.add("h-32");
+      navbar.classList.add("bg-transparent");
     }
   });
 
   return (
     <div
       id="navbar"
-      className="transition-all ease-in-out duration-200 text-white bg-transparent text-xs fixed z-20 top-0 w-full inline-flex px-12 items-center justify-between h-32"
+      className="transition-all ease-in-out duration-200 text-white bg-transparent text-xs fixed z-20 top-0 w-full inline-flex sm:px-6 md:px-12 px-4 items-center justify-between sm:h-24 md:h-32 h-20"
     >
-      <div className="flex w-1/3">
+      <div className="hidden sm:flex w-1/3">
         <div
           onClick={openSlider}
           ref={seedlingsRef}
@@ -45,7 +45,10 @@ const Navbar = () => {
       </div>
 
       <div className="w-1/3 flex items-center justify-center">
-        <p ref={logoRef} className="opacity-0 font-belle text-3xl">
+        <p
+          ref={logoRef}
+          className="opacity-0 font-belle text-xl sm:text-2xl md:text-3xl"
+        >
           re:forest
         </p>
       </div>
@@ -54,7 +57,7 @@ const Navbar = () => {
           <div
             onClick={openSlider}
             ref={profileRef}
-            className="opacity-0 p-3 hover:bg-theme-base/20 cursor-pointer rounded-md button-transition"
+            className="max-[800px]:hidden opacity-0 p-3 hover:bg-theme-base/20 cursor-pointer rounded-md button-transition"
           >
             <Icon sizeRules="w-5 h-5" fill="fill-white">
               <ProfileIcon />
@@ -63,7 +66,7 @@ const Navbar = () => {
           <div
             onClick={openSlider}
             ref={cartRef}
-            className="opacity-0 p-3 hover:bg-theme-base/20 cursor-pointer rounded-md button-transition"
+            className="max-[800px]:hidden opacity-0 p-3 hover:bg-theme-base/20 cursor-pointer rounded-md button-transition"
           >
             <Icon
               sizeRules="w-5 h-5"

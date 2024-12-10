@@ -53,7 +53,10 @@ const ProductHighlights = () => {
         {renderTab("re:forest picks", "reforestPicks")}
       </div>
 
-      <div ref={productsRef} className="opacity-0 py-12 divide-x inline-flex">
+      <div
+        ref={productsRef}
+        className="opacity-0 py-12 divide-x w-full justify-center flex-wrap inline-flex"
+      >
         {getProductList().map((product) => (
           <ProductListItem key={product.id} product={product} />
         ))}

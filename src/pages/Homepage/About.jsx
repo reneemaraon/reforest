@@ -53,7 +53,7 @@ const About = () => {
           Join the Movement to Plant a Greener Future
         </p>
       </div>
-      <div className="inline-flex gap-12">
+      <div className="inline-flex w-full justify-center flex-wrap gap-12">
         <AboutItem elementRef={aboutItemRefFirst}>
           <AboutImageItem>
             <img className="object-fit" src={treeImg} />
