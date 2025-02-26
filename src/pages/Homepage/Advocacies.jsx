@@ -64,6 +64,7 @@ const Advocacies = () => {
           {ITEMS.map((item, index) => (
             <img
               src={ITEMS[index].img}
+              key={index}
               className={`${
                 index == currentIndex
                   ? "opacity-100 scale-[1.02]"

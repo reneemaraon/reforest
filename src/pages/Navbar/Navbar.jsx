@@ -18,13 +18,21 @@ const Navbar = () => {
     if (window.scrollY > 100) {
       // Adjust the scroll distance as needed
       navbar.classList.remove("bg-transparent");
-      navbar.classList.remove("h-32");
-      navbar.classList.add("h-20");
+      navbar.classList.remove("md:h-32");
+      navbar.classList.remove("sm:h-24");
+      navbar.classList.remove("h-20");
+      navbar.classList.add("md:h-20");
+      navbar.classList.add("sm:h-16");
+      navbar.classList.add("h-12");
       navbar.classList.add("bg-text-dark");
     } else {
       navbar.classList.remove("bg-text-dark");
-      navbar.classList.remove("h-20");
-      navbar.classList.add("h-32");
+      navbar.classList.remove("md:h-20");
+      navbar.classList.remove("sm:h-16");
+      navbar.classList.remove("h-12");
+      navbar.classList.add("md:h-32");
+      navbar.classList.add("sm:h-24");
+      navbar.classList.add("h-20");
       navbar.classList.add("bg-transparent");
     }
   });
@@ -47,29 +55,29 @@ const Navbar = () => {
       <div className="w-1/3 flex items-center justify-center">
         <p
           ref={logoRef}
-          className="opacity-0 font-belle text-xl sm:text-2xl md:text-3xl"
+          className="opacity-0 font-belle text-xl sm:text-2xl mr-4 md:text-3xl"
         >
           re:forest
         </p>
       </div>
-      <div className="inline-flex items-center justify-end gap-5 w-1/3">
-        <div className="inline-flex items-center gap-2">
+      <div className="inline-flex items-center justify-end gap-3 md:gap-5 w-1/3">
+        <div className="inline-flex items-center gap-1 md:gap-2">
           <div
             onClick={openSlider}
             ref={profileRef}
-            className="max-[800px]:hidden opacity-0 p-3 hover:bg-theme-base/20 cursor-pointer rounded-md button-transition"
+            className="hidden sm:flex opacity-0 p-2.5 md:p-3 hover:bg-theme-base/20 cursor-pointer rounded-md button-transition"
           >
-            <Icon sizeRules="w-5 h-5" fill="fill-white">
+            <Icon sizeRules="w-4 h-4 md:w-5 md:h-5" fill="fill-white">
               <ProfileIcon />
             </Icon>
           </div>
           <div
             onClick={openSlider}
             ref={cartRef}
-            className="max-[800px]:hidden opacity-0 p-3 hover:bg-theme-base/20 cursor-pointer rounded-md button-transition"
+            className="hidden sm:flex opacity-0 p-2.5 md:p-3 hover:bg-theme-base/20 cursor-pointer rounded-md button-transition"
           >
             <Icon
-              sizeRules="w-5 h-5"
+              sizeRules="w-4 h-4 md:w-5 md:h-5"
               fill="stroke-white stroke-[2.5px] fill-white"
             >
               <CartIcon />

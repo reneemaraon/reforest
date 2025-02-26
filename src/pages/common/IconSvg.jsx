@@ -13,24 +13,24 @@ export const CartIcon = () => {
       x="0px"
       y="0px"
       viewBox="0 0 64 64"
-      enable-background="new 0 0 64 64"
-      xml:space="preserve"
+      enableBackground="new 0 0 64 64"
+      xmlSpace="preserve"
     >
-      <circle fill="none" stroke-miterlimit="10" cx="20" cy="57" r="6" />
-      <circle fill="none" stroke-miterlimit="10" cx="44" cy="57" r="6" />
+      <circle fill="none" strokeMiterlimit="10" cx="20" cy="57" r="6" />
+      <circle fill="none" strokeMiterlimit="10" cx="44" cy="57" r="6" />
       <line
         fill="none"
-        stroke-width="2"
-        stroke-miterlimit="10"
+        strokeWidth="2"
+        strokeMiterlimit="10"
         x1="26"
         y1="57"
         x2="38"
         y2="57"
       />
-      <polyline fill="none" stroke-miterlimit="10" points="14,57 10,2 0,2 " />
+      <polyline fill="none" strokeMiterlimit="10" points="14,57 10,2 0,2 " />
       <polyline
         fill="none"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         points="13,43 56,40 63,10 11,10 "
       />
     </svg>

@@ -2,101 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
-    @keyframes pushUp {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+  @keyframes pushUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
     }
-
-    @keyframes pushRight {
-      from {
-        opacity: 0;
-        transform: translateX(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-    }
-
-    @keyframes zoomOut {
-      from {
-        scale: 1.02;
-        opacity: 0;
-      }
-      to {
-        scale: 1;
-        opacity: 1;
-      }
-  }
-
-    @keyframes loadBar {
-      from {
-        width: 5%;
-      }
-      to {
-        width: 100%;
-      }
-    }
-    
-    
-    .animate-push-up {
-      animation: pushUp 0.5s ease-out forwards;
-    }
-
-    .animate-push-right {
-      animation: pushRight 0.6s ease-out forwards;
-    }
-    
-    .animate-fade-in {
-      animation: fadeIn 0.5s ease-in-out forwards;
-    }
-
-    .animate-zoom-out {
-      animation: zoomOut 0.5s ease-in forwards;
-    }
-
-    
-    .animate-fade-in-short {
-      animation: fadeIn 1s ease-in-out forwards;
-    }
-    
-    .animate-progress {
-      animation: loadBar 8s linear forwards;
-    }
-
-    .opacity-0 {
-        opacity: 0; 
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
+
+  @keyframes pushRight {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomOut {
+    from {
+      scale: 1.02;
+      opacity: 0;
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+  @keyframes loadBar {
+    from {
+      width: 5%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .animate-push-up {
+    animation: pushUp 0.5s ease-out forwards;
+  }
+
+  .animate-push-right {
+    animation: pushRight 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  .animate-zoom-out {
+    animation: zoomOut 0.5s ease-in forwards;
+  }
+
+  .animate-fade-in-short {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  .animate-progress {
+    animation: loadBar 8s linear forwards;
+  }
+
+  .opacity-0 {
+    opacity: 0;
+  }
+}
 
 @layer components {
+  .text-xxs {
+    @apply text-[10px];
+  }
 
-    .text-xxs {
-        @apply text-[10px];
-    }
+  .tag-small {
+    @apply rounded-full px-2 py-1.5 bg-lighter-brown;
+  }
 
-    .tag-small {
-        @apply rounded-full px-2 py-1.5 bg-lighter-brown;
-    }
-
-    .button-transition {
-        @apply transition-colors ease-in-out duration-300;
-    }
+  .button-transition {
+    @apply transition-colors ease-in-out duration-300;
+  }
 }
