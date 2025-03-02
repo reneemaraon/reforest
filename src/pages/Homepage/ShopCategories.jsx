@@ -30,14 +30,17 @@ const ShopCategories = () => {
   const animateRef = useScrollAnimation();
   const headlineRef = useScrollAnimation("animate-push-right");
   return (
-    <div className="w-full flex flex-col py-20 items-center">
-      <div className="max-w-[1120px] min-[1130px]:px-0 px-4 w-full flex items-start justify-between">
-        <p ref={headlineRef} className="opacity-0 font-lora text-[36px] mt-4">
+    <div className="w-full flex flex-col max-md:mb-20 py-12 sm:py-16 md:py-20 items-center">
+      <div className="max-w-[1120px] min-[1130px]:px-0 px-4 w-full flex max-md:flex-wrap gap-y-10 gap-x-20 items-center md:items-start justify-center md:justify-between">
+        <p
+          ref={headlineRef}
+          className="opacity-0 font-lora md:w-full leading-[100%] text-nowrap text-[24px] sm:text-[28px] md:text-[36px] mt-4"
+        >
           Shop by Category
         </p>
         <div
           ref={animateRef}
-          className="opacity-0 flex-wrap flex max-w-[550px] items-center gap-y-10 gap-8"
+          className="opacity-0 flex-wrap flex w-full items-center max-md:justify-center gap-y-10 gap-8"
         >
           <Category icon={<FloweringTreeLeaf />} name="Flowering" />
           <Category icon={<MedicinalPlantLeaf />} name="Medicinal" />
