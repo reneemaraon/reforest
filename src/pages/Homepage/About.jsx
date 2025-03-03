@@ -11,7 +11,7 @@ const AboutItem = ({ elementRef, children }) => {
   return (
     <div
       ref={elementRef}
-      className="opacity-0 w-[300px] items-center flex flex-col gap-5"
+      className="opacity-0 w-[250px] md:w-[300px] items-center flex flex-col gap-3 sm:gap-5"
     >
       {children}
     </div>
@@ -19,11 +19,16 @@ const AboutItem = ({ elementRef, children }) => {
 };
 
 const AboutHeader = ({ children }) => (
-  <p className="font-lora text-base text-center"> {children}</p>
+  <p className="font-lora text-xs sm:text-sm md:text-base text-center">
+    {" "}
+    {children}
+  </p>
 );
 
 const Description = ({ children }) => (
-  <p className="text-xs leading-[180%] text-center">{children}</p>
+  <p className="text-[10px] leading-[190%] sm:text-xs sm:leading-[180%] text-center">
+    {children}
+  </p>
 );
 
 const AboutImageItem = ({ children }) => <div className="h-8">{children}</div>;
@@ -48,12 +53,12 @@ const About = () => {
         </p>
         <p
           ref={headerRef}
-          className="opacity-0 text-center max-w-[500px] font-lora leading-[117%] text-[50px]"
+          className="mx-6 opacity-0 text-center max-w-[500px] font-lora leading-[117%] text-[36px] sm:text-[42px] md:text-[50px]"
         >
           Join the Movement to Plant a Greener Future
         </p>
       </div>
-      <div className="inline-flex w-full justify-center flex-wrap gap-12">
+      <div className="inline-flex w-full justify-center flex-wrap mx-6 sm:mx-4 md:mx-0 gap-12">
         <AboutItem elementRef={aboutItemRefFirst}>
           <AboutImageItem>
             <img className="object-fit" src={treeImg} />
