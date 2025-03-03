@@ -4,8 +4,8 @@ import twtUrl from "/src/assets/homepage/tw.png";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-black text-sm font-light text-white">
-      <div className="w-full inline-flex justify-between gap-6 px-6 sm:px-20 md:px-36 py-6 sm:py-12 md:py-20">
+    <div className="w-full bg-black text-xxs sm:text-xs md:text-sm font-light text-white">
+      <div className="w-full inline-flex justify-between flex-wrap gap-6 px-4 sm:px-20 md:px-36 py-6 sm:py-12 md:py-20">
         <p className="cursor-pointer">re:forest</p>
         <div className="inline-flex gap-10 sm:gap-20 md:gap-44">
           <div className="flex flex-col gap-7">

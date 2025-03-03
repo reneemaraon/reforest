@@ -32,7 +32,7 @@ const ProductHighlights = () => {
   const renderTab = (tabName, tabVal) => {
     return (
       <p
-        className={`transition-colors duration-500 ease-in-out hover:text-text-darker ${
+        className={`transition-colors text-xs sm:text-sm md:text-base duration-500 ease-in-out hover:text-text-darker ${
           activeTab === tabVal ? "text-text-dark" : "text-light-brown"
         }`}
         onClick={() => setActiveTab(tabVal)}
@@ -46,7 +46,7 @@ const ProductHighlights = () => {
     <div className="py-12 bg-light-white inline-flex flex-col w-full items-center">
       <div
         ref={tabsRef}
-        className="opacity-0 flex gap-10 text-base font-lora cursor-pointer"
+        className="opacity-0 flex gap-4 sm:gap-6 md:gap-10 text-base font-lora cursor-pointer"
       >
         {renderTab("New Seedlings", "newSeedlings")}
         {renderTab("Best Sellers", "bestSellers")}
@@ -55,7 +55,7 @@ const ProductHighlights = () => {
 
       <div
         ref={productsRef}
-        className="opacity-0 py-12 divide-x w-full justify-center flex-wrap inline-flex"
+        className="opacity-0 py-12 md:divide-x gap-x-4 sm:gap-0 gap-y-8 w-full justify-center flex-wrap inline-flex"
       >
         {getProductList().map((product) => (
           <ProductListItem key={product.id} product={product} />

@@ -89,7 +89,7 @@
   }
 
   .tag-small {
-    @apply rounded-full px-2 py-1.5 bg-lighter-brown;
+    @apply rounded-full px-1.5 sm:px-2 py-1 sm:py-1.5 bg-lighter-brown;
   }
 
   .button-transition {

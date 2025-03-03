@@ -13,9 +13,9 @@ const MainBanner = ({ handleImageLoad }) => {
 
   return (
     <div className="bg-[#000207] relative overflow-clip w-full inline-flex flex-col items-center pt-20 h-[580px] sm:h-[650px] md:h-[720px]">
-      <div className="absolute w-full top-0 opacity-60 max-w-[1500px] bg-red">
+      <div className="absolute w-full top-0 max-h-screen opacity-60 max-w-[1500px] bg-red">
         <img
-          className={`w-[1220px] opacity-0 object-cover min-w-[1120px]`}
+          className={`w-[1220px] sm:opacity-0 object-cover min-w-[900px] sm:min-w-[1120px]`}
           src={bannerImg}
           ref={imageZoomout}
           onLoad={handleImageLoad} // Image load handler
