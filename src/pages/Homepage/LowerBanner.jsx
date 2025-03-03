@@ -1,36 +1,39 @@
-import { usePopupContext } from '../../context/PopupContext';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
-import CustomButton from '../common/Button';
-import bannerImg from '/src/assets/homepage/bannerlow.jpg';
+import { usePopupContext } from "../../context/PopupContext";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
+import CustomButton from "../common/Button";
+import bannerImg from "/src/assets/homepage/bannerlow.jpg";
 
 const LowerBanner = () => {
   const { openSlider } = usePopupContext();
-  const animateFirst = useScrollAnimation('animate-push-right');
+  const animateFirst = useScrollAnimation("animate-push-right");
   const animateSecond = useScrollAnimation(
-    'animate-push-right',
+    "animate-push-right",
     undefined,
-    '300ms'
+    "300ms"
   );
   const animateThird = useScrollAnimation(
-    'animate-push-right',
+    "animate-push-right",
     undefined,
-    '400ms'
+    "400ms"
   );
 
   return (
-    <div className="relative flex flex-col items-center overflow-clip py-20 px-10 h-947 w-full">
+    <div className="relative flex flex-col items-center overflow-clip max-[380px]:px-2 py-20 px-5 md:px-10  w-full">
       <div className="absolute z-10 top-0 w-full h-full min-w-[1080px]">
         <img src={bannerImg} className="object-cover w-full h-full" />
       </div>
-      <div className="w-full min-w-[800px] max-w-[1180px] inline-flex z-10">
-        <div className="bg-primary-green text-white  rounded-l-[20px] flex flex-col justify-between pr-24 pl-12 py-12 w-[628px] h-[787px]">
+      <div className="w-full max-w-[1180px] flex-col sm:flex-row flex z-10">
+        <div className="min-w-[280px] bg-primary-green text-white  rounded-[20px] sm:rounded-l-[20px] flex flex-col justify-between gap-5 pr-10 sm:pr-16 md:pr-24 pl-6 sm:pl-10 md:pl-12 py-6 sm:py-10 md:py-12 w-full sm:w-[628px] min-h-[380px] sm:h-[650px] md:h-[787px]">
           <div className="inline-flex flex-col justify-start items-start  gap-5">
-            <p ref={animateFirst} className="duration-300 opacity-0 text-xs">
+            <p
+              ref={animateFirst}
+              className="duration-300 opacity-0 text-xxs md:text-xs"
+            >
               WE BELIEVE THAT
             </p>
             <p
               ref={animateSecond}
-              className="duration-800 opacity-0 font-lora leading-[117%] text-[48px]"
+              className="duration-800 opacity-0 font-lora leading-[117%] max-[300px]:text-[24px] text-[30px] sm:text-[36px] md:text-[48px]"
             >
               You and I can slow down the decay.
             </p>
@@ -53,7 +56,7 @@ const LowerBanner = () => {
             </div>
           </div>
         </div>
-        <div className="rounded-r-[20px] border-l-0 border-[0.5px]  border-white/50 w-[628px] h-[787px]"></div>
+        <div className="max-sm:hidden rounded-r-[20px] border-l-0 border-[0.5px]  border-white/50 w-[628px] h-[580px] sm:h-[650px] md:h-[787px]"></div>
       </div>
     </div>
   );
