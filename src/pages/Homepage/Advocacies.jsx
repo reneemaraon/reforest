@@ -59,8 +59,8 @@ const Advocacies = () => {
 
   return (
     <div className="py-10 px-4 gap-8  bg-light-brown-bg inline-flex flex-col w-full items-center">
-      <div className="max-w-[1280px] min-w-[900px] inline-flex justify-between gap-5">
-        <div className="w-full h-[600px] overflow-clip relative rounded-xl">
+      <div className="w-full max-w-[1280px] flex-col sm:flex-row flex justify-between sm:gap-5">
+        <div className="w-full h-[240px] sm:h-[400px] md:h-[600px] overflow-clip relative rounded-t-xl sm:rounded-xl">
           {ITEMS.map((item, index) => (
             <img
               src={ITEMS[index].img}
@@ -73,8 +73,10 @@ const Advocacies = () => {
             />
           ))}
         </div>
-        <div className="w-full h-[600px] bg-theme-base rounded-xl flex flex-col justify-between items-center p-10">
-          <p className="text-xxs text-lighter-text">OUR ADVOCACIES</p>
+        <div className="w-full h-[360px] sm:h-[500px] md:h-[600px] bg-theme-base rounded-b-xl sm:rounded-xl flex flex-col justify-between items-center px-2 py-8 md:p-10">
+          <p className="max-sm:hidden text-xxs text-lighter-text">
+            OUR ADVOCACIES
+          </p>
           {ITEMS.map((item, index) => (
             <div
               key={index}
@@ -84,13 +86,13 @@ const Advocacies = () => {
             >
               <p
                 ref={titleRef[index]}
-                className="opacity-0 font-lora text-[36px] text-center leading-[117%]"
+                className="opacity-0 font-lora text-[24px] sm:text-[28px] md:text-[36px] text-center leading-[117%]"
               >
                 {ITEMS[index].title}
               </p>
               <p
                 ref={descriptionRef[index]}
-                className="opacity-0 text-xs text-text-dark font-light leading-[180%] text-center"
+                className="opacity-0  text-xs text-text-dark font-light leading-[180%] text-center"
               >
                 {ITEMS[index].description}
               </p>
